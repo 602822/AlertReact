@@ -1,18 +1,20 @@
 interface Props {
-  state: string;
-  onClick: () => void;
+  onClose: () => void;
 }
 
-const Alert = ({ state, onClick }: Props) => {
+const Alert = ({ onClose }: Props) => {
   return (
-    <div className={state} role="alert">
+    <div
+      className="alert alert-warning alert-dismissible fade show"
+      role="alert"
+    >
       <strong>Warning!</strong>
       <button
         type="button"
         className="btn-close"
         data-bs-dismiss="alert"
         aria-label="Close"
-        onClick={onClick}
+        onClick={onClose}
       ></button>
     </div>
   );
